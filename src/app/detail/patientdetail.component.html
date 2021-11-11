@@ -1,0 +1,45 @@
+<div>
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/register">Register patient</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div>
+            <form [formGroup] = "checkoutForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <input type="number" formControlName="id" name="id" id="id" placeholder="Enter patient Id">
+                    <button>Enter</button>
+                </div>
+            </form>
+            <form [formGroup] = "checkoutFormRange" (ngSubmit)="onSubmitRange()">
+                <div>
+                    <input type="number" name="lower" id="lower"formControlName="lower" placeholder="Lower range">
+                    <input type="number" name="upper" id="upper" formControlName="upper" placeholder="Upper range">
+                    <button type="submit">Enter</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Visits</th>
+                    <th>Condition</th>
+                </tr>
+                <tr *ngFor="let patient of patients">
+                    <td>{{patient.id}}</td>
+                    <td>{{patient.name}}</td>
+                    <td>{{patient.age}}</td>
+                    <td>{{patient.visits}}</td>
+                    <td>{{patient.patientcondition}}</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+</div>
+
+

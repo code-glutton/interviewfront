@@ -1,0 +1,31 @@
+<div>
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/view">View patient</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div>
+            <form  [formGroup] = "checkoutForm" (ngSubmit)="onSubmit()">
+                <div>
+                <input type="text" name="name" id="name" placeholder="enter patient name" formControlName="name">
+                </div>
+                <div>
+                    <input type="number" name="age" id="age" placeholder="enter patient age" formControlName="age">
+                </div>
+                <div>
+                    <input type="number" name="visits" id="visits" placeholder="Enter number of visits" formControlName="visits">
+                </div>
+                <div>
+                    <select name="patientcondition" id="condition" formControlName="patientcondition">
+                        <option value="mild">Mild</option>
+                        <option value="severe">Severe</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+</div>
